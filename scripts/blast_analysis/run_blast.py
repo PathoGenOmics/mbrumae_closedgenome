@@ -86,7 +86,7 @@ def main():
             elif or_gene == '-':
                 sequences_negative(args.fasta, start_gene, end_gene, name_gene, in_file)
             
-    blast_command ='tblastn -query ' + args.jobname + '.multi_aa.fasta -subject ' + args.protein + ' -outfmt 7 -max_target_seqs 2 -evalue 1e-6 -max_hsps 1 -out ' + args.jobname + '.blast.out'
+    blast_command ='tblastn -query ' + args.jobname + '.multi_aa.fasta -subject ' + args.protein + ' -outfmt 7 -max_target_seqs 2 -evalue 1e-6 -max_hsps 1 -out ' + args.jobname + '.blastout'
     os.system(blast_command)
     
     thresholds_check =[60,70,80]
