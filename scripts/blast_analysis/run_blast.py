@@ -41,6 +41,29 @@ def sequences_negative(fasta_file:str, start: int, end: int, gene: str, out_gene
         to_write = '>' + header + '\n' + str(sequence) + '\n'
         out_gene.write(to_write)
 
+def write_threshold(jobname:str,number:int,lista_genes:list):
+    with open(jobname+'.'+ str(number)+'.gene.blastout','w') as out_write:
+        with open(jobname+'.blastout','r') as out_results2:
+            
+            for line in out_results2:
+                if '#' not in line:
+                    l2 = line.strip('\n')
+                    line = line.strip('\n').split('\t')
+                    name = line[0]
+                    aa_align =int(line[4])
+                    aa_miss =int(line[5])
+                    aa = aa_align - aa_miss
+                    
+                    for gene in lista_genes:
+                        if gene[0] == name:
+                            gene_len = int(gene[4])
+                            n_gene = gene[0]
+                    
+                    per = (aa/gene_len)*100
+                    print(name,aa_align,aa_miss,gene_len,n_gene,str(per))
+                    if per >= number:
+                        sentencia = l2+'\t'+str(per)+'\n'
+                        out_write.write(sentencia)
 
 def main():
     parser = argparse.ArgumentParser(description = 'Script to blast proteins aa into a fasta nt')
