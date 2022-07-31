@@ -6,6 +6,9 @@ from Bio.Seq import Seq
 import os
 import argparse
 
+#command line
+#python3 blast_proteins.py -g gene.txt -f h37rv.fasta -p h37rv.fasta -n prueba
+
 def read_genes(genes_file:str):
     '''
     To store genes info of a file into a list
