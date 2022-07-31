@@ -25,7 +25,7 @@ def sequences_positive(fasta_file:str, start: int, end: int, gene: str, out_gene
     fasta_sequences = SeqIO.parse(open(fasta_file),'fasta')
     for fasta in fasta_sequences:
         sequence = Seq(str(fasta.seq)[start-1:end]).translate()
-        header = str(fasta.id)
+        header = str(gene)
         to_write = '>' + header + '\n' + str(sequence) + '\n'
         out_gene.write(to_write)
 
@@ -37,7 +37,7 @@ def sequences_negative(fasta_file:str, start: int, end: int, gene: str, out_gene
     fasta_sequences = SeqIO.parse(open(fasta_file),'fasta')
     for fasta in fasta_sequences:
         sequence = Seq(str(fasta.seq)[start-1:end]).reverse_complement().translate()
-        header = str(fasta.id)
+        header = str(gene)
         to_write = '>' + header + '\n' + str(sequence) + '\n'
         out_gene.write(to_write)
 
