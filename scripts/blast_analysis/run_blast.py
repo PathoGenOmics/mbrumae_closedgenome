@@ -76,13 +76,19 @@ def main():
     args = parser.parse_args()
     lista_genes = read_genes(args.genes) # list of genes to analyze
 
-
+    contador = 0
     for gene in lista_genes:
+        contador+=1
         name_gene = str(gene[0])
         or_gene = str(gene[1])
         start_gene = int(gene[2])
         end_gene = int(gene[3])
-        with open(args.jobname+'.multi_aa.fasta', 'a') as in_file:
+        if contador == 1:
+            mode = 'w'
+        else:
+            mode = 'a'
+
+        with open(args.jobname+'.multi_aa.fasta', mode) as in_file:
             if or_gene == '+':
                 sequences_positive(args.fasta, start_gene, end_gene, name_gene, in_file)
             elif or_gene == '-':
