@@ -17,6 +17,19 @@ def read_genes(genes_file:str):
                 list_genes.append(line.strip('\n').split('\t'))
     return list_genes
 
+def sequences_positive(fasta_file:str, start: int, end: int, gene: str):
+    '''
+    To extract gene from fasta file
+    '''
+    with open(gene + '.fasta','w') as out_gene:
+        fasta_sequences = SeqIO.parse(open(fasta_file),'fasta')
+        for fasta in fasta_sequences:
+            sequence = Seq(str(fasta.seq)[start-1:end]).translate()
+            header = str(fasta.id)
+            to_write = '>' + header + '\n' + str(sequence) + '\n'
+            out_gene.write(to_write)
+
+
 def main():
     parser = argparse.ArgumentParser(description = 'Script to blast proteins aa into a fasta nt')
     parser.add_argument('-g', dest = 'genes', required = True, help = 'file with gene coordinates')
