@@ -44,7 +44,6 @@ def sequences_negative(fasta_file:str, start: int, end: int, gene: str, out_gene
 def write_threshold(jobname:str, number:int, lista_genes:list):
     with open(jobname+'.'+ str(number)+'.gene.blastout','w') as out_write:
         with open(jobname+'.blastout','r') as out_results2:
-            
             for line in out_results2:
                 if '#' not in line:
                     l2 = line.strip('\n')
