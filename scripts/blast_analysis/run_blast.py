@@ -17,29 +17,29 @@ def read_genes(genes_file:str):
                 list_genes.append(line.strip('\n').split('\t'))
     return list_genes
 
-def sequences_positive(fasta_file:str, start: int, end: int, gene: str):
+def sequences_positive(fasta_file:str, start: int, end: int, gene: str, out_gene):
     '''
     To extract gene from fasta file
     '''
-    with open(gene + '.fasta','w') as out_gene:
-        fasta_sequences = SeqIO.parse(open(fasta_file),'fasta')
-        for fasta in fasta_sequences:
-            sequence = Seq(str(fasta.seq)[start-1:end]).translate()
-            header = str(fasta.id)
-            to_write = '>' + header + '\n' + str(sequence) + '\n'
-            out_gene.write(to_write)
+    
+    fasta_sequences = SeqIO.parse(open(fasta_file),'fasta')
+    for fasta in fasta_sequences:
+        sequence = Seq(str(fasta.seq)[start-1:end]).translate()
+        header = str(fasta.id)
+        to_write = '>' + header + '\n' + str(sequence) + '\n'
+        out_gene.write(to_write)
 
-def sequences_negative(fasta_file:str, start: int, end: int, gene: str):
+def sequences_negative(fasta_file:str, start: int, end: int, gene: str, out_gene):
     '''
     to extract gene from fasta file in negative strand
     '''
-    with open(gene + '.fasta','w') as out_gene:
-        fasta_sequences = SeqIO.parse(open(fasta_file),'fasta')
-        for fasta in fasta_sequences:
-            sequence = Seq(str(fasta.seq)[start-1:end]).reverse_complement().translate()
-            header = str(fasta.id)
-            to_write = '>' + header + '\n' + str(sequence) + '\n'
-            out_gene.write(to_write)
+
+    fasta_sequences = SeqIO.parse(open(fasta_file),'fasta')
+    for fasta in fasta_sequences:
+        sequence = Seq(str(fasta.seq)[start-1:end]).reverse_complement().translate()
+        header = str(fasta.id)
+        to_write = '>' + header + '\n' + str(sequence) + '\n'
+        out_gene.write(to_write)
 
 
 def main():
@@ -59,18 +59,16 @@ def main():
             or_gene = str(gene[1])
             start_gene = int(gene[2])
             end_gene = int(gene[3])
-            if or_gene == '+':
-                sequences_positive(args.fasta, start_gene, end_gene, name_gene)
-            elif or_gene == '-':
-                sequences_negative(args.fasta, start_gene, end_gene, name_gene)
-            blast_command ='tblastn -query ' + name_gene + '.fasta -subject '+ args.protein+' -outfmt 7 -max_target_seqs 2 -evalue 1e-6 -max_hsps 1 -out '+name_gene+'.blast.out'
+            with open(args.jobname+'.multi_aa.fasta', 'w') as in_file:
+                if or_gene == '+':
+                    sequences_positive(args.fasta, start_gene, end_gene, name_gene, in_file)
+                elif or_gene == '-':
+                    sequences_negative(args.fasta, start_gene, end_gene, name_gene, in_file)
+            
+            blast_command ='tblastn -query ' + args.jobname + '.multi_aa.fasta -subject ' + args.protein + ' -outfmt 7 -max_target_seqs 2 -evalue 1e-6 -max_hsps 1 -out ' + args.jobname + '.blast.out'
             os.system(blast_command)
-            with open(name_gene+'.blast.out','r') as in_blast:
-                for line in in_blast:
-                    if '#' not in line:
-                        line = name_gene+'\t'+line
-                        out_results.write(line)
-            os.system('rm ' + name_gene + '.blast.out')
-            os.system('rm ' + name_gene + '.fasta')
+
+
+
 if __name__ == '__main__':
     main()
