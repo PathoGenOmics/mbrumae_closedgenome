@@ -50,8 +50,8 @@ def write_threshold(jobname:str,number:int,lista_genes:list):
                     l2 = line.strip('\n')
                     line = line.strip('\n').split('\t')
                     name = line[0]
-                    aa_align =int(line[4])
-                    aa_miss =int(line[5])
+                    aa_align =int(line[3])
+                    aa_miss =int(line[4])
                     aa = aa_align - aa_miss
                     
                     for gene in lista_genes:
