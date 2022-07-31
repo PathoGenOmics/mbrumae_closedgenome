@@ -41,7 +41,7 @@ def sequences_negative(fasta_file:str, start: int, end: int, gene: str, out_gene
         to_write = '>' + header + '\n' + str(sequence) + '\n'
         out_gene.write(to_write)
 
-def write_threshold(jobname:str,number:int,lista_genes:list):
+def write_threshold(jobname:str, number:int, lista_genes:list):
     with open(jobname+'.'+ str(number)+'.gene.blastout','w') as out_write:
         with open(jobname+'.blastout','r') as out_results2:
             
