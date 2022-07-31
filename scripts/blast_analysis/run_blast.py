@@ -25,5 +25,27 @@ def main():
     parser.add_argument('-n', dest = 'jobname', required = True, help = 'name for job')
     args = parser.parse_args()
     lista_genes = read_genes(args.genes) # list of genes to analyze
+
+    with open(args.jobname+'.blastout','w') as out_results:
+        header = '#gene\tquery\tsubject\tpercentage identity\talignment length\tmismatches\tgap opens\tq.start\tq.end\ts.start\ts.end\tevalue\tbit score\n'
+        out_results.write(header)
+        for gene in lista_genes:
+            name_gene = str(gene[0])
+            or_gene = str(gene[1])
+            start_gene = int(gene[2])
+            end_gene = int(gene[3])
+            if or_gene == '+':
+                sequences_positive(args.fasta, start_gene, end_gene, name_gene)
+            elif or_gene == '-':
+                sequences_negative(args.fasta, start_gene, end_gene, name_gene)
+            blast_command ='tblastn -query ' + name_gene + '.fasta -subject '+ args.protein+' -outfmt 7 -max_target_seqs 2 -evalue 1e-6 -max_hsps 1 -out '+name_gene+'.blast.out'
+            os.system(blast_command)
+            with open(name_gene+'.blast.out','r') as in_blast:
+                for line in in_blast:
+                    if '#' not in line:
+                        line = name_gene+'\t'+line
+                        out_results.write(line)
+            os.system('rm ' + name_gene + '.blast.out')
+            os.system('rm ' + name_gene + '.fasta')
 if __name__ == '__main__':
     main()
