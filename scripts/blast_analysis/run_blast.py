@@ -80,14 +80,14 @@ def main():
         or_gene = str(gene[1])
         start_gene = int(gene[2])
         end_gene = int(gene[3])
-        with open(args.jobname+'.multi_aa.fasta', 'w') as in_file:
+        with open(args.jobname+'.multi_aa.fasta', 'a') as in_file:
             if or_gene == '+':
                 sequences_positive(args.fasta, start_gene, end_gene, name_gene, in_file)
             elif or_gene == '-':
                 sequences_negative(args.fasta, start_gene, end_gene, name_gene, in_file)
             
-        blast_command ='tblastn -query ' + args.jobname + '.multi_aa.fasta -subject ' + args.protein + ' -outfmt 7 -max_target_seqs 2 -evalue 1e-6 -max_hsps 1 -out ' + args.jobname + '.blast.out'
-        os.system(blast_command)
+    blast_command ='tblastn -query ' + args.jobname + '.multi_aa.fasta -subject ' + args.protein + ' -outfmt 7 -max_target_seqs 2 -evalue 1e-6 -max_hsps 1 -out ' + args.jobname + '.blast.out'
+    os.system(blast_command)
 
 
 
