@@ -88,6 +88,10 @@ def main():
             
     blast_command ='tblastn -query ' + args.jobname + '.multi_aa.fasta -subject ' + args.protein + ' -outfmt 7 -max_target_seqs 2 -evalue 1e-6 -max_hsps 1 -out ' + args.jobname + '.blast.out'
     os.system(blast_command)
+    
+    thresholds_check =[60,70,80]
+    for number in thresholds_check:
+        write_threshold(args.jobname, number, lista_genes)
 
 
 
