@@ -14,6 +14,15 @@ Script to perform tblastn analysis extracting genes (aa) and find them into a fa
 Usage:
 python3 blast_proteins.py -g gene.txt -f brumae.fasta -p h37rv.fasta -n brumae_find
 '''
+__author__ = "Paula Ruiz-Rodriguez"
+__credits__ = ["PathoGenOmics Lab", "Paula Ruiz-Rodriguez"]
+__license__ = "GPL"
+__version__ = "2.0.0"
+__maintainer__ = "Paula Ruiz-Rodriguez"
+__email__ = "paula.ruiz-rodriguez@uv.es"
+__status__ = "Finalized"
+
+
 from Bio import SeqIO
 from Bio.Seq import Seq
 import os
