@@ -1,13 +1,24 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+'''
 
+ _     _           _     _                                     
+| |   | |         | |   | |                                    
+| |__ | | __ _ ___| |_  | |__  _ __ _   _ _ __ ___   __ _  ___ 
+| '_ \| |/ _` / __| __| | '_ \| '__| | | | '_ ` _ \ / _` |/ _ \
+| |_) | | (_| \__ \ |_  | |_) | |  | |_| | | | | | | (_| |  __/
+|_.__/|_|\__,_|___/\__| |_.__/|_|   \__,_|_| |_| |_|\__,_|\___|
+                                                               
+                                                               
+Script to perform tblastn analysis extracting genes (aa) and find them into a fasta
+Usage:
+python3 blast_proteins.py -g gene.txt -f brumae.fasta -p h37rv.fasta -n brumae_find
+'''
 from Bio import SeqIO
 from Bio.Seq import Seq
 import os
 import argparse
 
-#command line
-#python3 blast_proteins.py -g gene.txt -f h37rv.fasta -p h37rv.fasta -n prueba
 
 def read_genes(genes_file:str):
     '''
