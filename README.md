@@ -1,5 +1,5 @@
 # Genomic analysis of _Mycobacterium brumae_ sustains its nonpathogenic and immunogenic phenotype  
-__Chantal Renau-Mínguez,<sup>1</sup>__ 
+__Chantal Renau-Mínguez<sup>1</sup>,__ 
 __Paula Herrero-Abadía,<sup>2</sup>__ 
 __Vicente Sentandreu,<sup>3</sup>__ 
 __Paula Ruiz-Rodriguez,<sup>1</sup>__ 
