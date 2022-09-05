@@ -31,3 +31,6 @@ __and Mireia Coscolla<sup>1*</sup>__
 
 ## Aim of  this repository
 The main purpose of this repository is to display the scripts made for that release, in order to achieve reproducibility.
+
+## Scripts
+This folder contains multiple subfolders with scripts made for certain purpose.
