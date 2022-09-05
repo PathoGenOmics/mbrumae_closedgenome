@@ -34,3 +34,4 @@ The main purpose of this repository is to display the scripts made for that rele
 
 ## Scripts
 This folder contains multiple subfolders with scripts made for certain purpose.
+### blast_analysis
