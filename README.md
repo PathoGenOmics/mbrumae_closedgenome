@@ -30,3 +30,4 @@ __and Mireia Coscolla<sup>1*</sup>__
 <sub> mireia.coscolla@uv.es (Mireia Coscolla); Esther.Julian@uab.cat (Esther Julián) <sub>
 
 ## Aim of  this repository
+The main purpose of this repository is to display the scripts made for that release, in order to achieve reproducibility.
