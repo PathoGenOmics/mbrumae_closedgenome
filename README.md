@@ -18,8 +18,7 @@ __and Mireia Coscolla<sup>1*</sup>__
 3. Genomics Unit, Central Service for Experimental Research (SCSIE), University of Valencia, Spain  
 4. Bacterial Infections and Antimicrobial Therapies Group, Institute for Bioengineering of Catalonia (IBEC), Baldiri Reixac 15-21, 08028 Barcelona, Spain  
 5. Microbiology Section, Department of Genetics, Microbiology and Statistics, Biology Faculty, Universitat de Barcelona, 08028 Barcelona, Spain  
-6. Instituto de Biomedicina de Valencia (IBV), CSIC, 46010, Valencia, Spain  
-</sub>  
+6. Instituto de Biomedicina de Valencia (IBV), CSIC, 46010, Valencia, Spain  </sub>  
 
 <sub> * Correspondence:  <sub>   
 
