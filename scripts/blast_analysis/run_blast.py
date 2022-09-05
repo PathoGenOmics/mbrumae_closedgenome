@@ -1,13 +1,35 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+'''
+
+ _     _           _     _                                     
+| |   | |         | |   | |                                    
+| |__ | | __ _ ___| |_  | |__  _ __ _   _ _ __ ___   __ _  ___ 
+| '_ \| |/ _` / __| __| | '_ \| '__| | | | '_ ` _ \ / _` |/ _ \
+| |_) | | (_| \__ \ |_  | |_) | |  | |_| | | | | | | (_| |  __/
+|_.__/|_|\__,_|___/\__| |_.__/|_|   \__,_|_| |_| |_|\__,_|\___|
+                                                               
+                                                               
+Script to perform tblastn analysis extracting genes (aa) and find them into a fasta
+We calculate the match percentage of the gene with the target, finally we filter
+the genes by 3 thresholds of match percentage: 80, 70 and 60.
+Usage:
+python3 blast_proteins.py -g gene.txt -f brumae.fasta -p h37rv.fasta -n brumae_find
+'''
+__author__ = "Paula Ruiz-Rodriguez"
+__credits__ = ["PathoGenOmics Lab", "Paula Ruiz-Rodriguez"]
+__license__ = "GPL"
+__version__ = "2.0.0"
+__maintainer__ = "Paula Ruiz-Rodriguez"
+__email__ = "paula.ruiz-rodriguez@uv.es"
+__status__ = "Finalized"
+
 
 from Bio import SeqIO
 from Bio.Seq import Seq
 import os
 import argparse
 
-#command line
-#python3 blast_proteins.py -g gene.txt -f h37rv.fasta -p h37rv.fasta -n prueba
 
 def read_genes(genes_file:str):
     '''
@@ -70,8 +92,8 @@ def write_threshold(jobname:str, number:int, lista_genes:list):
 def main():
     parser = argparse.ArgumentParser(description = 'Script to blast proteins aa into a fasta nt')
     parser.add_argument('-g', dest = 'genes', required = True, help = 'file with gene coordinates')
-    parser.add_argument('-f', dest = 'fasta', required = True, help = 'file fasta to blast')
-    parser.add_argument('-p', dest = 'protein', required = True, help = 'file fasta to get proteins')
+    parser.add_argument('-f', dest = 'protein', required = True, help = 'file fasta to blast')
+    parser.add_argument('-p', dest = 'fasta', required = True, help = 'file fasta to get proteins')
     parser.add_argument('-n', dest = 'jobname', required = True, help = 'name for job')
     args = parser.parse_args()
     lista_genes = read_genes(args.genes) # list of genes to analyze
@@ -104,4 +126,5 @@ def main():
 
 
 if __name__ == '__main__':
+    print(__doc__)
     main()
