@@ -8,7 +8,11 @@ __Álvaro Chiner-Oms<sup>6</sup>,__
 __Manuela Torres-Puente<sup>6</sup>,__ 
 __Iñaki Comas<sup>6</sup>,__ 
 __Esther Julián<sup>2*</sup>__
-__and Mireia Coscolla<sup>1*</sup>__
+__and Mireia Coscolla<sup>1*</sup>__  
+
+<sub> * Correspondence:  <sub>   
+
+<sub> mireia.coscolla@uv.es (Mireia Coscolla); Esther.Julian@uab.cat (Esther Julián) <sub> 
 
 <br>
 <sub> 
@@ -25,7 +29,4 @@ __and Mireia Coscolla<sup>1*</sup>__
 
 6. Instituto de Biomedicina de Valencia (IBV), CSIC, 46010, Valencia, Spain  </sub>  
 
-<sub> * Correspondence:  <sub>   
-
-<sub> mireia.coscolla@uv.es (Mireia Coscolla); Esther.Julian@uab.cat (Esther Julián) <sub> 
 
