@@ -40,5 +40,7 @@ Scripts for the analysis to get protein
 This folder contains multiple files related to the analyzed closed genome: *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
 
 brumae.fasta: fasta file with the genomic sequence of *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
+
 brumae.gff: annotation file used in this study.  
+
 bruma.sqn: file for submission to NCBI.  
