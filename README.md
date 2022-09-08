@@ -35,7 +35,7 @@ The main purpose of this repository is to display the scripts made for that rele
 ## Scripts
 This folder contains multiple subfolders with scripts made for certain purpose.
 ### blast_analysis
-Scripts for the analysis to get protein 
+Scripts for the analysis to get protein identity of *Mycobacterium tuberculosis* H37Rv in the analyzed genomes of interest.  
 ## Closed genome
 This folder contains multiple files related to the analyzed closed genome: *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
 
