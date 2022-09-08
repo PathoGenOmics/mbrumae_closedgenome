@@ -37,4 +37,8 @@ This folder contains multiple subfolders with scripts made for certain purpose.
 ### blast_analysis
 Scripts for the analysis to get protein 
 ## Closed genome
-This folder contains multiple files related to the analyzed closed genome: *Mycobacterium brumae* ATCC 51384<sup>T</sup>
+This folder contains multiple files related to the analyzed closed genome: *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
+
+brumae.fasta: fasta file with the genomic sequence of *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
+brumae.gff: annotation file used in this study.  
+bruma.sqn: file for submission to NCBI.  
