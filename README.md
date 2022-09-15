@@ -37,11 +37,11 @@ This folder contains multiple subfolders with scripts made for certain purpose.
 Scripts for the analysis to get protein identity of *Mycobacterium tuberculosis* H37Rv in the analyzed genomes of interest. 
 ### duplicated_genes  
 Scripts for the analysis to get genes with less than 300bp repeated in order to exclude this genes in Illumina genomic analysis. 
-- clean_genes.py
-- multifasta.py
-- process_mummer_output.py
-- command_mummer.sh
-- duplicated_genescoord.tsv: file with the genes to exclude for Illumina analysis -> with gene id + "\t" + orientation + "\t" + start + "\t" + end + "\n"
+- __clean_genes.py__: script to get from gff file a tabbed file with gene id, orientation, start nt and end nt.
+- __multifasta.py__: script to get nt sequences for each gene from a fasta and a tsv file.  
+- __process_mummer_output.py__: script to process mummer aou
+- __command_mummer.sh__: bash script in sequential order to get repeated genes from a gff file and a fasta file, also includes the command in mummer "run-mummer3".
+- __duplicated_genescoord.tsv__: tabbed file with the genes to exclude for Illumina analysis -> with gene id + "\t" + orientation + "\t" + start + "\t" + end + "\n"
 
 ## Closed genome
 This folder contains multiple files related to the analyzed closed genome: *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
