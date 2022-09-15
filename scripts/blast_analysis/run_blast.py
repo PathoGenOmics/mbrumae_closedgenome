@@ -10,9 +10,9 @@
 |_.__/|_|\__,_|___/\__| |_.__/|_|   \__,_|_| |_| |_|\__,_|\___|
                                                                
                                                                
-Script to perform tblastn analysis extracting genes (aa) and find them into a fasta
-We calculate the match percentage of the gene with the target, finally we filter
-the genes by 3 thresholds of match percentage: 80, 70 and 60.
+Script to perform tblastn analysis extracting genes (aa) and find them in a fasta 
+We calculate the coincidence percentage of the gene with the target, 
+finally we filter the genes by 3 coincidence percentage thresholds: 80, 70 and 60.
 Usage:
 python3 blast_proteins.py -g gene.txt -f brumae.fasta -p h37rv.fasta -n brumae_find
 '''
