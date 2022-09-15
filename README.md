@@ -35,7 +35,6 @@ The main purpose of this repository is to display the scripts made for this acad
 This folder contains multiple subfolders with scripts made for certain purpose.
 
 Dependencies  
-
 ```
 Python version 3
 BLAST+
