@@ -46,7 +46,7 @@ The MUMmer 3
 Scripts for the analysis to get protein identity of *Mycobacterium tuberculosis* H37Rv in the analyzed genomes of interest. 
 - __run_blast.py__: Script to perform tblastn analysis extracting genes (aa) and find them in a fasta. We calculate the coincidence percentage of the gene with the target, finally we filter the genes by 3 coincidence percentage thresholds: 80, 70 and 60.  
 
-__Command__  
+#### Command  
 ```
 python3 run_blast.py -g gene.txt -f brumae.fasta -p h37rv.fasta -n brumae_find
 ```
