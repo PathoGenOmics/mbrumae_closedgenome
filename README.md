@@ -39,7 +39,7 @@ Scripts for the analysis to get protein identity of *Mycobacterium tuberculosis*
 
 __Command__  
 ```
-python3 blast_proteins.py -g gene.txt -f brumae.fasta -p h37rv.fasta -n brumae_find
+python3 run_blast.py -g gene.txt -f brumae.fasta -p h37rv.fasta -n brumae_find
 ```
 ### duplicated_genes  
 Scripts for the analysis to get genes with less than 300bp repeated in order to exclude this genes in Illumina genomic analysis. 
