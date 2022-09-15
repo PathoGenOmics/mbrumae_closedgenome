@@ -46,8 +46,8 @@ Scripts for the analysis to get genes with less than 300bp repeated in order to 
 ## Closed genome
 This folder contains multiple files related to the analyzed closed genome: *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
 
-__brumae.fasta:__ fasta file with the genomic sequence of *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
+- __brumae.fasta:__ fasta file with the genomic sequence of *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
 
-__brumae.gff:__ annotation file used in this study.  
+- __brumae.gff:__ annotation file used in this study.  
 
-__brumae.sqn:__ file for submission to NCBI.  
+- __brumae.sqn:__ file for submission to NCBI.  
