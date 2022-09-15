@@ -33,6 +33,15 @@ The main purpose of this repository is to display the scripts made for this acad
 
 ## Scripts
 This folder contains multiple subfolders with scripts made for certain purpose.
+
+Dependencies  
+
+```
+Python v 3
+BLAST+
+The MUMmer 3 
+```
+
 ### blast_analysis  
 Scripts for the analysis to get protein identity of *Mycobacterium tuberculosis* H37Rv in the analyzed genomes of interest. 
 - __run_blast.py__: Script to perform tblastn analysis extracting genes (aa) and find them in a fasta. We calculate the coincidence percentage of the gene with the target, finally we filter the genes by 3 coincidence percentage thresholds: 80, 70 and 60.  
