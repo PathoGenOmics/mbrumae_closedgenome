@@ -37,7 +37,7 @@ This folder contains multiple subfolders with scripts made for certain purpose.
 Dependencies  
 
 ```
-Python v 3
+Python version 3
 BLAST+
 The MUMmer 3 
 ```
