@@ -41,7 +41,7 @@ Scripts for the analysis to get genes with less than 300bp repeated in order to 
 - multifasta.py
 - process_mummer_output.py
 - command_mummer.sh
-- duplicated_genescoord.tsv
+- duplicated_genescoord.tsv: file with the genes to exclude for Illumina analysis -> with gene id + "\t" + orientation + "\t" + start + "\t" + end + "\n"
 
 ## Closed genome
 This folder contains multiple files related to the analyzed closed genome: *Mycobacterium brumae* ATCC 51384<sup>T</sup>  
